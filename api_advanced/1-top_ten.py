@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """Module that queries the Reddit API for the top ten hot posts."""
 import requests
 import sys
