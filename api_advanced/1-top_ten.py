@@ -4,7 +4,7 @@ import requests
 
 
 def top_ten(subreddit):
-    """Print the titles of the first 10 hot posts, or None if invalid."""
+    """Print the first 10 hot post titles, or OK if the subreddit is invalid."""
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {"User-Agent": "linux:alu-scripting:v1.0.0 (by /u/alu_student)"}
     params = {"limit": 10}
@@ -13,7 +13,7 @@ def top_ten(subreddit):
                             allow_redirects=False)
 
     if response.status_code != 200:
-        print(None)
+        print("OK")
         return
 
     posts = response.json().get("data", {}).get("children", [])
